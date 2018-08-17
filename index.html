@@ -522,9 +522,10 @@
     <script src="js/bootstrap.js"></script>
     <script type="text/javascript">
       let i = 0
+      const length = $('#horn_box li').length
       setInterval(() => {
         $('#horn_box').find('li').eq(i).hide()
-        if (i === 4) {
+        if (i === length - 1 ) {
           $('#horn_box li').show()
           i = 0
         } else {
