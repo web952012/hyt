@@ -283,7 +283,7 @@
     <div class="notice_f">
         <div class="notice_f_in">
             <img src="img/gaogao.png" alt="#">
-            <ul>
+            <ul id="horn_box">
                 <li>
                     <a href="#">
                         果盘游戏点位调整播报
@@ -520,6 +520,18 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+      let i = 0
+      setInterval(() => {
+        $('#horn_box').find('li').eq(i).hide()
+        if (i === 4) {
+          $('#horn_box li').show()
+          i = 0
+        } else {
+          i ++
+        }
+      }, 1000)
+    </script>
 
 </body>
 </html>
