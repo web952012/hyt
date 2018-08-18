@@ -165,6 +165,14 @@
             vertical-align:middle;
             margin-right:5px;
         }
+        .chatting_content {
+          position: absolute;
+          top: 5px;
+          right: -250px;
+          width: 250px;
+          height: 300px;
+          background: red;
+        }
     </style>
 </head>
 <body>
@@ -196,8 +204,11 @@
                     &nbsp;&nbsp;&nbsp;久币余额：￥0
                 </span>
             </td>
-            <td>
-                <img src="img/erji.png" style="float:right" alt="#">
+            <td id="chatting_container" style="position: relative;">
+                <img id="chatting_box_js" src="img/erji.png" style="float:right;position:relative;" alt="#">
+                <div class="chatting_content">
+
+                </div>
             </td>
         </tr>
     </table>
@@ -348,7 +359,19 @@
             <p>账户</p>
         </a>
     </div>
-
-
+    <script type="text/javascript">
+      // 定义变量控制弹窗的显示与否
+      let isShowChatting = false
+      $('#chatting_box_js').click(() => {
+        if (isShowChatting) {
+          $('.chatting_content').animate({right: '-250px'})
+          $('#chatting_box_js').animate({left: '0'})
+        } else {
+          $('.chatting_content').animate({right: '0'})
+          $('#chatting_box_js').animate({left: '-250px'})
+        }
+        isShowChatting = !isShowChatting
+      })
+    </script>
 </body>
 </html>
