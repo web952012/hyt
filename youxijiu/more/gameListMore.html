@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>游戏久公会平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/home.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../layui-v2.3.0/layui/css/layui.css"  media="all">
+    <script src="../layui-v2.3.0/layui/layui.js" charset="utf-8"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-decoration:none;
+            border: 0px solid transparent !important;
+        }
+        .return{
+            float:left;
+            margin-top:3px;
+        }
+        .top .return img{
+            width:17px;
+            height:20px;
+            margin-top:-9px;
+        }
+        .top{
+            text-align: center;
+            color:#fff;
+            line-height:44px;
+            font-size:20px;
+            background:#ce2029;
+            z-index:100;
+        }
+        .box{
+            width:94%;
+            margin:0 auto;
+        }
+        table{
+            border-collapse:separate;
+            border-spacing:0 0.5rem;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .data_f{
+            width:100%;
+            height:124px;
+        }
+        .data_tg{
+            height:6rem;
+
+        }
+        .data_tg_img{
+            width:25%;
+            float:left;
+            text-align:center;
+        }
+        .xuan{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .current ul{
+            width:200px;
+            margin:0 auto;
+
+        }
+        .sc-form-in{
+            display:-webkit-box;
+            height:30px;
+        }
+        .sch_txt{
+            -webkit-box-flex:1;
+            height:30px;
+            line-height:28px;
+            background:#f2f2f2;
+            -webkit-border-radius:0;
+            -webkit-appearance:none;
+            border:1px solid #e0e0e0!important;
+            display:block;
+            padding:0 5px;
+            font-size:14px;
+            color:#828282;
+        }
+        .sch_btn{
+            background:#ce2029;
+            width:60px;
+            height:30px;
+            display:block;
+            border:none;
+            -webkit-border-radius:0;
+            color:#fff;
+        }
+        .flow-default{
+            height:500px;
+            overflow:auto;
+        }
+        .site-demo-flow{width: 600px; height: 300px; overflow: auto; text-align: center;}
+        .site-demo-flow img{width: 40%; height: 200px; margin: 0 2px 5px 0; border: none;}
+    </style>
+</head>
+<body>
+    <div class="top">
+    <div class="box">
+        <a href="javascript:history.back();" class="return">
+            <img src="../img/return.png" alt="#">
+        </a>
+        游戏市场
+    </div>
+</div>
+    <form action="#" class="sc-form-in" style="width:90%;margin:16px auto;">
+        <input type="text" class="sch_txt">
+        <input type="submit" class="sch_btn" value="搜索">
+    </form>
+    <br>
+
+
+
+        <!--<div class="data_f" style="height:2.2rem;background-color:white;font-size:15px;padding:1rem;">-->
+            <!--<div class="data_tg">-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>冒险大当家-ios</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/cqz..png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>楚乔传</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/cskld.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>超时空乱斗满v版</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/gcdys.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>鬼吹灯之牧野诡事</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/tt.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>1.76传奇满V版</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/cq.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>1.76传奇满V版（BT）</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/by.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>1942捕鱼版</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/1m.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>1米购</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/3d.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D坦克争霸</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/3d.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D坦克争霸-二战风云</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/tk.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D坦克争霸2</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D火车危机2摩登时代</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/fl.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D群英传BT【安卓】</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/3dzh.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D英雄战魂（送iPad mini）</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/sds.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>3D赛亚人-维斯降临</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/by.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>4D极速沙滩赛车</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/by.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>54捕鱼</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/777.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>777战记</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/777.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>777战记【安卓】</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/8090.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>80后指挥官</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/80.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>80后指挥官,80后指挥官</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/zhg.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>80后指挥官【安卓】</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/80t.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>80天环游世界</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/nba.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>A-NBA篮球大师</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/xd.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>A-天天炫舞</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/sds.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>A-将军留步</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/cq.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>A-碧血剑</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/80t.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>AOG扑克</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<br><br><br><br><br><br>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/3d.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>ATT连环炮</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/dhh.jpg" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>baby闹三国</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/zlkd.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>A-子龙快打</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="data_tg_img">-->
+                    <!--<a href="#">-->
+                        <!--<img src="../img/sgykj.png" width="60px" alt="#">-->
+                    <!--</a>-->
+                    <!--<div class="xuan">-->
+                        <!--<span>上古养鲲记</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <ul class="flow-default" id="LAY_demo1">
+        <!--<li>-->
+            <!--<a href="#">-->
+                <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+            <!--</a>-->
+            <!--<div class="xuan">-->
+                <!--<span>冒险大当家-ios</span>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<a href="#">-->
+                <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+            <!--</a>-->
+            <!--<div class="xuan">-->
+                <!--<span>冒险大当家-ios</span>-->
+            <!--</div>-->
+        <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li><li>-->
+        <!--<a href="#">-->
+            <!--<img src="../img/mxddj.png" width="60px" alt="#">-->
+        <!--</a>-->
+        <!--<div class="xuan">-->
+            <!--<span>冒险大当家-ios</span>-->
+        <!--</div>-->
+    <!--</li>-->
+    </ul>
+
+
+    <script>
+        layui.use('flow', function(){
+            var flow = layui.flow;
+
+            flow.load({
+                elem: '.flow-default' //流加载容器
+                ,scrollElem: '.flow-default' //滚动条所在元素，一般不用填，此处只是演示需要。
+                ,done: function(page, next){ //执行下一页的回调
+
+                    //模拟数据插入
+                    setTimeout(function(){
+                        var lis = [];
+                        var list=['../img/mxddj.png','../img/mxddj.png','../img/mxddj.png','../img/mxddj.png','../img/mxddj.png'];
+                        for(var i = 0; i < 8; i++){
+                            //lis.push('<li>'+ ( (page-1)*8 + i + 1 ) +'</li>')
+                            lis.push('<li>'+"<img src="+list['../img/'+((page-1)*8 + i + 1 )]+"/>"+'</li>')
+                        }
+
+                        //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
+                        //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
+                        next(lis.join(''), page < 10); //假设总页数为 10
+                    }, 500);
+                }
+            });
+
+
+        });
+    </script>
+
+
+    <!--<div style="margin-bottom:100px;">-->
+
+        <!--<div class="current">-->
+            <!--<ul class="nav nav-pills">-->
+                <!--<li class="active"><a data-toggle="tab" href="#">1</a></li>-->
+                <!--<li><a data-toggle="tab"  href="#">2</a></li>-->
+                <!--<li><a data-toggle="tab"  href="#">3</a></li>-->
+                <!--<li><a data-toggle="tab"  href="#">下一页</a></li>-->
+            <!--</ul>-->
+    <!--</div></div>-->
+
+
+    <div style="margin-bottom:100px;"></div>
+
+    <div class="footerdh1_f">
+        <a href="../index.html">
+            <b class="move_f">
+                <img src="../img/zhuye.png" alt="#">
+            </b>
+            <p>首页</p>
+        </a>
+        <a href="../channel.html">
+            <b>
+                <img src="../img/chennal.png" alt="#">
+            </b>
+            <p>渠道管理</p>
+        </a>
+        <a href="../gameList.html">
+            <b>
+                <img src="../img/touzi.png" alt="#">
+            </b>
+            <p>游戏市场</p>
+        </a>
+        <a href="../payCart.html">
+            <b>
+                <img src="../img/chongzhi.png" alt="#">
+            </b>
+            <p>充值中心</p>
+        </a>
+        <a href="../user.html">
+            <b>
+                <img src="../img/grzx.png" alt="#">
+            </b>
+            <p>账户</p>
+        </a>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</body>
+</html>

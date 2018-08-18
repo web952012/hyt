@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>游戏久公会平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/home.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="layer/skin/layer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            border:0;
+            text-decoration:none;
+        }
+        .callbacks{
+            position:relative;
+            list-style:none;
+            overflow:hidden;
+            width:100%;
+            padding:0;
+            margin:0;
+        }
+        .callbacks img{
+            display:block;
+            position:relative;
+            z-index:1;
+            height:auto;
+            width:100%;
+            border:0;
+        }
+        .notice_f{
+            width:100%;
+            height:40px;
+            overflow:hidden;
+            background:#fcefe5;
+            border:1px solid #fde2cd;
+        }
+        .notice_f_in{
+            width:94%;
+            height:44px;
+            margin:0 auto;
+        }
+        .notice_f_in img{
+            display:block;
+            width:26px;
+            margin-top:9px;
+            float:left;
+            margin-right:6px;
+        }
+        .notice_f_in ul{
+            float:left;
+            overflow:hidden;
+            position:relative;
+            height:22px;
+            margin-top:10px;
+        }
+        .data_f{
+            width:100%;
+            height:124px;
+            overflow:hidden;
+            background:#fff;
+        }
+        .qudao{
+            margin-top:30px;
+        }
+        .qudao_in{
+            width:94%;
+            height:44px;
+            margin:0 auto;
+        }
+        #qudao_in_img{
+            display:block;
+            float:left;
+            margin-top:-0.2rem;
+        }
+        .qudao_s{
+            width:40%;
+            height:42px;
+            margin-left:0.4rem;
+            margin-top:-0.5rem;
+            float:left;
+        }
+        .qudao_s span{
+            color:#3F3F3F;
+            font-size:16px;
+            line-height:44px;
+            height:3rem;
+        }
+        .qudao_a{
+            color:#595959;
+            font-size:16px;
+            line-height:20px;
+            float:right;
+        }
+        .data_tg{
+            height:6rem;
+
+        }
+        .data_tg_img{
+            width:25%;
+            float:left;
+            text-align:center;
+        }
+        .data_f2{
+            width:100%;
+            height:90px;
+            overflow:hidden;
+            background:#fff;
+            margin-top:10px;
+        }
+        .data_f3{
+            width:22%;
+            height:88px;
+            overflow:hidden;
+            margin-left:24px;
+            line-height:88px;
+            margin-top:1px;
+            float:left;
+        }
+        .data_f3 ul{
+            width:100%;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .data_f3 ul li{
+            width:100%;
+            height:90%;
+            float:left;
+        }
+        .data_f3 ul li em{
+            width:100%;
+            display:block;
+            height:60%;
+            text-align:center;
+            line-height:46px;
+            color:#ce2029;
+            font-size:13px;
+            font-style:normal;
+            font-weight:bold;
+        }
+        .data_f3 ul li span{
+            width:100%;
+            display:block;
+            height:60%;
+            text-align:center;
+            line-height:22px;
+            color:#9b9b9b;
+            font-size:16px;
+        }
+        .data_f4{
+            width:30%;
+            height:88px;
+            overflow:hidden;
+            margin-left:22px;
+            line-height:88px;
+            margin-top:-72px;
+            float:left;
+        }
+        .data_f4 ul{
+            width:100%;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .data_f4 ul li{
+            width:100%;
+            height:90%;
+            float:left;
+        }
+        .data_f4 ul li em{
+            width:100%;
+            display:block;
+            height:60%;
+            text-align:center;
+            line-height:50px;
+            color:#ce2029;
+            font-size:13px;
+            font-style:normal;
+            font-weight:bold;
+        }
+        .data_f4 ul li span{
+            width:100%;
+            display:block;
+            height:60%;
+            text-align:center;
+            line-height:22px;
+            color:#9b9b9b;
+            font-size:16px;
+        }
+        .data_f5{
+            width:30%;
+            height:88px;
+            overflow:hidden;
+            line-height:50px;
+            margin-top:-70px;
+            float:right;
+            margin-right:-6px;
+        }
+        .data_f5 button{
+            width:76%;
+            height:40px;
+            line-height:15px;
+            background-color:#cb000e;
+            border-radius:8%;
+            margin-top:27px;
+        }
+        .data_f5 button span{
+            color:#ffffff;
+            line-height:22px;
+            font-size:14px;
+        }
+        .qudao_tg{
+            width:90%;
+            /*height:150px;*/
+            margin:0 auto;
+        }
+        .qudao_tg_img{
+            width:25%;
+            margin-top:1rem;
+            float:right;
+            text-align:center;
+        }
+        .qudao_tg_img img{
+            margin:0 auto;
+        }
+        .xuan{
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_f">
+        <div class="top_f_in">
+            <img src="img/logo3.png" alt="#">
+        </div>
+        <div class="top_f_in2">
+            <a href="Login/Login.html" class="login_f">登录</a>
+            <img src="img/xain_03.png" style="margin-top:8px;" alt="#">
+            <a href="Login/register.html" class="register_f">注册</a>
+        </div>
+    </div>
+
+    <div class="callbacks_container">
+        <div id="ad" class="carousel" data-ride="carousel" data-interval="2500">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="callbacks" src="img/5.jpg" alt="#">
+                </div>
+                <div class="item">
+                    <img class="callbacks" src="img/6.jpg" alt="#">
+                </div>
+                <div class="item">
+                    <img class="callbacks" src="img/3.jpg" alt="#">
+                </div>
+                <div class="item">
+                    <img class="callbacks" src="img/4.jpg" alt="#">
+                </div>
+                <ul class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#ad" class="active"></li>
+                    <li data-slide-to="1" data-target="#ad"></li>
+                    <li data-slide-to="2" data-target="#ad"></li>
+                    <li data-slide-to="3" data-target="#ad"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="notice_f">
+        <div class="notice_f_in">
+            <img src="img/gaogao.png" alt="#">
+            <ul id="horn_box">
+                <li>
+                    <a href="#">
+                        果盘游戏点位调整播报
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        果盘游戏上架播报
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        TT语音-折扣调整
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        乐游【游戏下架播报】
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        乐游【游戏上架播报】
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="data_f">
+        <div class="data_f44">
+           <div class="qudao_in">
+               <img id="qudao_in_img" src="img/tuigpng.png" alt="#">
+               <div class="qudao_s">
+                   <span>游戏推广</span>
+               </div>
+               <div class="qudao_a">
+                   <a href="more/gameListMore.html" style="text-decoration:none;color:#595959!important;;">更多</a>
+               </div>
+           </div>
+        </div>
+        <div class="data_tg">
+            <div class="data_tg_img">
+                <a href="more/rxss.html">
+                    <img src="img/a.jpg" width="60px" alt="#">
+                </a>
+                <div class="xuan">
+                    <span>热血弑神-王者征途</span>
+                </div>
+            </div>
+            <div class="data_tg_img">
+                <a href="more/grhfl_a.html">
+                    <img src="img/b.png" width="60px" alt="#">
+                </a>
+                <div class="xuan">
+                    <span>官人好风流BT-PG【苹果】</span>
+                </div>
+            </div>
+            <div class="data_tg_img">
+                <a href="more/grhfl_b.html">
+                    <img src="img/c.png" width="60px" alt="#">
+                </a>
+                <div class="xuan">
+                    <span>官人好风流BT【安卓】</span>
+                </div>
+            </div>
+            <div class="data_tg_img">
+                <a href="more/mfzy.html">
+                    <img src="img/d.png" width="60px" alt="#">
+                </a>
+                <div class="xuan">
+                    <span>魔法之翼-PG【苹果】</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data_f2">
+        <div class="data_f3">
+            <ul>
+                <li>
+                    <em>11429</em>
+                    <span>游戏数量</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="img/xian3_16.png" style="margin-top:20px" alt="#">
+        </div>
+        <div class="data_f4">
+            <ul>
+                <li>
+                    <em>19</em>
+                    <span>可购买商品数量</span>
+                </li>
+            </ul>
+        </div>
+        <div class="data_f5">
+            <button id="rechargejiu">
+                <a href="user/recharge.html"><span>久币充值</span></a>
+            </button>
+        </div>
+    </div>
+
+    <div class="qudao">
+        <div class="qudao_in">
+            <img id="qudao_in_img" src="img/qd.png" alt="#">
+            <div class="qudao_s">
+                <span>渠道管理</span>
+            </div>
+            <div class="qudao_a">
+                <a href="channel.html" style="text-decoration:none;color:#595959!important;">
+                    更多
+                </a>
+            </div>
+        </div>
+        <div class="qudao_tg">
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html"><img src="img/e.png" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>游戏久</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html"><img src="img/f.png" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>乐8</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="">
+                <div class="qudao_tg_img">
+                    <a href="channel.html"><img src="img/g.png" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>游团</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html">
+                        <img src="img/h.jpg" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>网易</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <br><br><br><br><br><br>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html">
+                        <img src="img/j.png" width="50px" alt="">
+                        <div class="xuan">
+                            <span>百度</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html">
+                        <img src="img/k.png" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>应用宝</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html">
+                        <img src="img/l.png" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>爱游戏</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="qudao_tg_img">
+                    <a href="channel.html">
+                        <img src="img/m.jpg" width="50px" alt="#">
+                        <div class="xuan">
+                            <span>XY</span>
+                        </div>
+                    </a>
+                </div>
+            </a>
+            <br><br><br><br><br><br>
+        </div>
+    </div>
+
+    <div style="margin-bottom:100px;"></div>
+
+    <div class="footerdh1_f">
+
+        <a href="index.html">
+            <b class="move_f">
+                <img src="img/zhuye.png" alt="#">
+            </b>
+            <p>首页</p>
+        </a>
+        <a href="channel.html">
+            <b>
+                <img src="img/chennal.png" alt="#">
+            </b>
+            <p>渠道管理</p>
+        </a>
+        <a href="gameList.html">
+            <b>
+                <img src="img/touzi.png" alt="#">
+            </b>
+            <p>游戏市场</p>
+        </a>
+        <a href="payCart.html">
+            <b>
+                <img src="img/chongzhi.png" alt="#">
+            </b>
+            <p>充值中心</p>
+        </a>
+        <a href="user.html">
+            <b>
+                <img src="img/grzx.png" alt="#">
+            </b>
+            <p>账户</p>
+        </a>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+        let i = 0;
+        const length = $('#horn_box li').length;
+        setInterval(() => {
+            $('#horn_box').find('li').eq(i).hide();
+            if (i === length - 1 ) {
+                $('#horn_box li').show();
+                i = 0
+            } else {
+                i ++
+            }
+        }, 4000)
+    </script>
+
+</body>
+</html>

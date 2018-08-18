@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>游戏久公会平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta content="email=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/style1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="layer/skin/layer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-decoration:none;
+            border: 0px solid transparent !important;
+        }
+        .return{
+            float:left;
+            margin-top:3px;
+        }
+        .top .return img{
+            width:17px;
+            height:20px;
+            margin-top:-9px;
+        }
+        .top{
+            text-align: center;
+            color:#fff;
+            line-height:44px;
+            font-size:20px;
+            background:#ce2029;
+            z-index:100;
+        }
+        .box{
+            width:94%;
+            margin:0 auto;
+        }
+        table{
+            border-collapse:separate;
+            border-spacing:0 0.5rem;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .us_ke{
+            overflow:hidden;
+            border-top:1px solid #dcdcdc;
+            clear:both;
+        }
+        .us_ke span{
+            display:block;
+            width:49.8%;
+            float:left;
+            margin:6px 0;
+        }
+        .us_ke span i{
+            display:block;
+            font-size:13px;
+            color:#888;
+            font-style:normal;
+            line-height:22px;
+            text-align:center;
+        }
+        .us_ke span em{
+            display:block;
+            font-size:20px;
+            color:#ee5142;
+            font-style:normal;
+            line-height:30px;
+            text-align:center;
+        }
+        .us_rec{
+            margin:16px;
+            overflow:hidden;
+        }
+        .us_rec span{
+            display:block;
+            width:50%;
+            float:left;
+        }
+        .us_rec span a{
+            display:block;
+            width:80%;
+            background:#ce2029;
+            height:36px;
+            line-height:36px;
+            color:#fff;
+            text-align:center;
+            font-size:16px;
+            margin:0 auto;
+            border-radius:6px;
+            text-decoration:none;
+        }
+        .us_rec a.tx{
+            background:#fff;
+            border:1px solid #ce2029!important;
+            color:#ce2029;
+        }
+        a{
+            text-decoration:none!important;
+        }
+        .jiu{
+            font-size:13px;
+            margin-bottom:1rem;
+            margin-left:0.5rem;
+            color:#5b767e;
+            letter-spacing:0.2rem;
+        }
+        .main{
+            width:100%;
+            height:125px;
+            margin-bottom:10px;
+        }
+        .jvzhong{
+            width:100%;
+            height:48px;
+            margin:0 auto;
+        }
+        .main ul li{
+            float:left;
+            width:33.2%;
+            text-align:center;
+        }
+        .main ul li p{
+            margin-left:-20px;
+            margin-top:10px;
+        }
+        .mid{
+            vertical-align:middle;
+            margin-right:20px;
+        }
+        .main_a{
+            width:100%;
+            height:125px;
+        }
+        .jvzhong_a{
+            width:100%;
+            height:48px;
+            margin:0 auto;
+        }
+        .main_a ul li{
+            float:left;
+            width:25%;
+            text-align:center;
+        }
+        .main_a ul li p{
+            margin-left:-5px;
+            margin-top:10px;
+        }
+        .mid_a{
+            vertical-align:middle;
+            margin-right:5px;
+        }
+        .chatting_content {
+            position:absolute;
+            right:-250px;
+            width:250px;
+            height:300px;
+            background:#fff;
+        }
+        #floatDivBoxs .floatDtt{
+            width:100%;
+            height:45px;
+            line-height:45px;
+            background:#ce2029;
+            color:#fff;
+            font-size:18px;
+            text-indent:22px;
+            position:relative;
+        }
+        .floatShadow{
+            background:#fff;
+            box-shadow:-2px 0 3px rgba(0,0,0,0.25);
+        }
+        #floatDivBoxs .floatDqq li{
+            height:45px;
+            line-height:45px;
+            font-size:15px;
+            border-bottom:1px solid #e3e3e3;
+            padding:0 0 0 50px;
+        }
+        #floatDivBoxs .floatDqq li img{
+            border:none;
+            outline:none;
+            margin:-34px 32px;
+        }
+        #floatDivBoxs .floatDtxt{
+            font-size:18px;
+            color:#333;
+            padding:12px 14px;
+            margin-left:22px;
+        }
+        #floatDivBoxs .floatDte1{
+            padding:0 0 14px 50px;
+        }
+        #floatDivBoxs .floatDbg{
+            width:100%;
+            height:20px;
+            box-shadow:-2px 0 3px rgba(0,0,0,0.25);
+        }
+    </style>
+
+</head>
+<body>
+<div class="top">
+    <div class="box">
+        <a href="javascript:history.back();" class="return">
+            <img src="img/return.png" alt="#">
+        </a>
+        我的账户
+        <a href="#" style="float:right;color:#fff;font-size:16px;">注销</a>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <td>
+            <img src="img/tou.png" style="border-radius:50px;
+                border:1px solid #e2e2e2;"width="100" height="100" alt="#">
+        </td>
+        <td>
+                <span style="font-size:16px;">
+                    <img src="img/vipdbj.png"
+                         style="width:20px;height:20px;
+                         margin-top:5px;" alt="#">欢迎您，施雪峰
+                </span>
+            <br>
+            <span style="font-size:16px;display:block;
+                line-height:30px;color:#333;">
+                    &nbsp;&nbsp;&nbsp;久币余额：￥0
+                </span>
+        </td>
+        <td id="chatting_container" style="position: relative;">
+
+                <img id="chatting_box_js" src="img/erji.png" style="float:right;position:relative;" alt="#">
+                <div class="chatting_content">
+                    <div id="floatDivBoxs" style="right:-175px;">
+                        <div class="floatDtt">在线客服</div>
+                        <div class="floatShadow">
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        七七
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">运营</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        粒粒
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">运营</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        皮皮
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">运营</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        洋葱
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">运营</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        稳稳
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">结算</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        小夜
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">运营</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="floatDqq" style="display: inline-block">
+                                <li>
+                                    <a href="#" style="margin-left:-50px!important;">
+                                        橘白
+                                        <img src="img/kfqq.gif" alt="#">
+                                        <span style="float:right;">结算</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="floatDtxt">热线电话</div>
+                            <div class="floatDte1">
+                                <span style="font-size:3px;margin-left:-29px;">
+                                    13588310575
+                                </span>
+                            </div>
+                            <div class="floatDbg">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </td>
+    </tr>
+</table>
+
+<div class="us_ke">
+        <span style="border-right:1px solid #dcdcdc;">
+            <i>可用久币（个）</i>
+            <em>0</em>
+        </span>
+    <span>
+            <i>提现金额（元）</i>
+            <em>0</em>
+        </span>
+</div>
+
+<div class="us_rec">
+        <span>
+            <a href="user/recharge.html">久币充值</a>
+        </span>
+    <span>
+            <a href="user/tx.html" class="tx">提现</a>
+        </span>
+</div>
+
+<p class="jiu">久币•提现</p>
+
+<div class="main">
+    <div class="jvzhong">
+        <ul>
+            <li><a href="#">
+                <img style="width:55px;height:55px;" class="mid" src="img/jbmx.png" alt="#">
+                <p>久币充值</p>
+            </a></li>
+            <li><a href="#">
+                <img style="width:55px;height:55px;" class="mid" src="img/jbczmx.png" alt="#">
+                <p>久币充值明细</p>
+            </a></li>
+            <li><a href="#">
+                <img style="width:55px;height:55px;" class="mid" src="img/jbtxmx.png" alt="#">
+                <p>久币提现明细</p>
+            </a></li>
+        </ul>
+    </div>
+</div>
+
+<p class="jiu">渠道•游戏</p>
+
+<div class="main">
+    <div class="jvzhong">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="img/e.png" style="width:55px;height:55px;" class="mid"  alt="#">
+                    <p>我的渠道</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/youxi.png" style="width:55px;height:55px;" class="mid" alt="#">
+                    <p>我的游戏</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="jiu">数据中心</p>
+
+<div class="main_a">
+    <div class="jvzhong_a">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="img/qdjbjl.png" style="width:55px;height:55px;" class="mid_a"  alt="#">
+                    <p>渠道加币记录</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/yxczjl.png" style="width:55px;height:55px;" class="mid_a" alt="#">
+                    <p>游戏充值记录</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/dkgmjl.png" style="width:55px;height:55px;" class="mid_a" alt="#">
+                    <p>点卡购买记录</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="img/cksj.png" style="width:55px;height:55px;" class="mid_a" alt="#">
+                    <p>查看数据</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="jiu">平台•公告</p>
+
+<div class="main">
+    <div class="jvzhong">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="img/ggtz.png" style="width:55px;height:55px;" class="mid"  alt="#">
+                    <p>公告通知</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div style="margin-bottom:100px;"></div>
+
+<div class="footerdh1_f">
+    <a href="index.html">
+        <b class="move_f">
+            <img src="img/zhuye.png" alt="#">
+        </b>
+        <p>首页</p>
+    </a>
+    <a href="channel.html">
+        <b>
+            <img src="img/chennal.png" alt="#">
+        </b>
+        <p>渠道管理</p>
+    </a>
+    <a href="gameList.html">
+        <b>
+            <img src="img/touzi.png" alt="#">
+        </b>
+        <p>游戏市场</p>
+    </a>
+    <a href="payCart.html">
+        <b>
+            <img src="img/chongzhi.png" alt="#">
+        </b>
+        <p>充值中心</p>
+    </a>
+    <a href="user.html">
+        <b>
+            <img src="img/grzx.png" alt="#">
+        </b>
+        <p>账户</p>
+    </a>
+</div>
+<script type="text/javascript">
+    // 定义变量控制弹窗的显示与否
+    let isShowChatting = false
+    $('#chatting_box_js').click(() => {
+        if (isShowChatting) {
+            $('.chatting_content').animate({right: '-250px'})
+            $('#chatting_box_js').animate({left: '0'})
+        } else {
+            $('.chatting_content').animate({right: '0'})
+            $('#chatting_box_js').animate({left: '-250px'})
+        }
+        isShowChatting = !isShowChatting
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>游戏久公会平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/home.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" media="all">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            text-decoration:none;
+            border: 0px solid transparent !important;
+        }
+        .return{
+            float:left;
+            margin-top:3px;
+        }
+        .top .return img{
+            width:17px;
+            height:20px;
+            margin-top:-9px;
+        }
+        .top{
+            text-align: center;
+            color:#fff;
+            line-height:44px;
+            font-size:20px;
+            background:#ce2029;
+            z-index:100;
+        }
+        .box{
+            width:94%;
+            margin:0 auto;
+        }
+        table{
+            border-collapse:separate;
+            border-spacing:0 0.5rem;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .bank{
+            margin-top:60px;
+            overflow:hidden;
+            background:#ce2029!important;
+            border-radius:6px;
+        }
+        .bank p{
+            padding-top:6px;
+            color:#fff;
+            font-weight:bold;
+            line-height:44px;
+            padding-left:22px;
+        }
+        .bank span{
+            padding-bottom:12px;
+            font-size:14px;
+            color:#f4f4f4;
+            line-height:22px;
+            display:block;
+            padding-left:22px;
+        }
+        .bank a{
+            display:block;
+            font-size:16px;
+            color:#fff;
+            float:right;
+            margin:38px 12px 0 0;
+        }
+        .login{
+            width:100%;
+            margin-top:20px;
+        }
+        .account{
+            overflow:hidden;
+            margin:0 auto;
+        }
+        .account span{
+            display:block;
+            float:left;
+            font-size:15px;
+            color:#666;
+            line-height:30px;
+        }
+        .account span i{
+            font-style:normal;
+            color:#ce2029;
+        }
+        .login_in{
+            height:44px;
+            width:100%;
+            border-bottom:1px solid #ce2029!important;
+            margin-top:12px;
+        }
+        .login_in span{
+            width:90px;
+            font-size:14px;
+            text-align:left;
+            line-height:44px;
+            display:block;
+            float:left;
+            margin-right:5px;
+        }
+        .login_in input{
+            width:30%;
+            display:block;
+            float:left;
+            height:44px;
+        }
+        .login_in select{
+            font-size:14px;
+            text-align:left;
+            line-height:44px;
+            display:block;
+            float:left;
+            margin-right:5px;
+        }
+        .zhi{
+            display:block;
+            font-size:14px;
+            color:#888;
+            line-height:28px;
+            margin:6px auto 0;
+        }
+        .zhi i{
+            font-style:normal;
+            color:#ce2029!important;
+        }
+        .kong{
+            margin-top:1rem;
+            margin-bottom:-2rem;
+            text-align:center;
+        }
+        .login_t{
+            width:100%;
+            height:40px;
+            font-size:16px;
+            text-align:center;
+            line-height:40px;
+            border-radius:6px;
+            background:#ce2029!important;
+            margin-top:50px;
+            display:block;
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+    <div class="box">
+        <a href="javascript:history.back();" class="return">
+            <img src="../img/return.png" alt="#">
+        </a>
+        提现
+        <a href="#" style="float:right;color:#fff;font-size:16px;">提现记录</a>
+    </div>
+</div>
+
+    <div class="bank box">
+        <div style="float:left;">
+            <p style="margin-top:0;font-size:14px;margin-left:-0.5rem;">建设银行-龙卡储蓄卡(银联卡)-借记卡</p>
+            <span style="margin-bottom:0;margin-left:-0.5rem;">6227001688030031334</span>
+        </div>
+        <a href="#">修改</a>
+    </div>
+
+    <div class="bank box">
+        <div style="float:left;">
+            <p style="margin-top:0;font-size:14px;margin-left:-0.5rem;">支付宝账号</p>
+            <span style="margin-bottom:0;margin-left:-0.5rem;">135626434742</span>
+        </div>
+        <a href="#">修改</a>
+    </div>
+
+    <div class="login">
+        <div class="box">
+            <div class="account">
+                <span>
+                    账户当期余额：
+                    <i>0&nbsp;&nbsp;&nbsp;</i>元
+                </span>
+            </div>
+            <div class="login_in">
+                <span>提现金额</span>
+            </div>
+            <div class="login_in">
+                <span style="width:38%;">请选择提现方式</span>
+                <select name="#" id="#" style="width:100px;margin-top:10px;">
+                    <option value="0">--请选择--</option>
+                    <option value="1">支付宝提现</option>
+                    <option value="2">银行卡提现</option>
+                </select>
+            </div>
+            <span class="zhi">
+                <i>*</i>
+                 久币余额至少200个才能提现
+            </span>
+            <div class="kong"></div>
+            <a href="#" class="login_t">提现</a>
+        </div>
+    </div>
+
+    <div style="margin-bottom:100px;"></div>
+
+
+    <div class="footerdh1_f">
+        <a href="../index.html">
+            <b class="move_f">
+                <img src="../img/zhuye.png" alt="#">
+            </b>
+            <p>首页</p>
+        </a>
+        <a href="../channel.html">
+            <b>
+                <img src="../img/chennal.png" alt="#">
+            </b>
+            <p>渠道管理</p>
+        </a>
+        <a href="../gameList.html">
+            <b>
+                <img src="../img/touzi.png" alt="#">
+            </b>
+            <p>游戏市场</p>
+        </a>
+        <a href="../payCart.html">
+            <b>
+                <img src="../img/chongzhi.png" alt="#">
+            </b>
+            <p>充值中心</p>
+        </a>
+        <a href="../user.html">
+            <b>
+                <img src="../img/grzx.png" alt="#">
+            </b>
+            <p>账户</p>
+        </a>
+    </div>
+</body>
+</html>

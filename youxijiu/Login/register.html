@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>游戏久公会平台</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style1.css" type="text/css" media="all">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style:none;
+            border:0;
+            text-decoration:none;
+        }
+        .return{
+            float:left;
+            margin-top:3px;
+        }
+        .top .return img{
+            width:17px;
+            height:20px;
+            margin-top:0;
+        }
+        .top{
+            text-align: center;
+            color:#fff;
+            line-height:44px;
+            font-size:20px;
+            background:#ce2029;
+            z-index:100;
+        }
+        .box{
+            width:94%;
+            margin:0 auto;
+        }
+        .lo_2{
+            position:relative;
+        }
+        .lo_1{
+            height:44px;
+            width:100%;
+            border-bottom:1px solid #ce2029;
+            margin-top:12px;
+        }
+        .lo_1 span{
+            width:90px;
+            font-size:14px;
+            text-align:left;
+            line-height:44px;
+            display:block;
+            float:left;
+            margin-right:5px;
+        }
+        .lo_2 input{
+            width:30%;
+        }
+        .lo_1 input{
+            float:left;
+            display:block;
+            height:44px;
+        }
+        .yan{
+            position:absolute;
+            bottom:8px;
+            right:0;
+        }
+        .lo_2 .btn_mfyzm{
+            border:none;
+            color:#666;
+            height:30px;
+            width:100px;
+            background:#ececec;
+            border-radius:4px;
+        }
+        .lo_login{
+            width:100%;
+            height:40px;
+            font-size:16px;
+            text-align:center;
+            line-height:40px;
+            border-radius:6px;
+            background:#ce2029;
+            margin-top:25px;
+            display:block;
+            color:#fff;
+        }
+    </style>
+</head>
+<body style="background:#fff;">
+    <div class="top">
+        <div class="box">
+            <a href="./index.html" class="return">
+                <img src="../img/return.png" alt="#">
+            </a>
+            注册
+        </div>
+    </div>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="login_lo" >
+            <div class="box">
+                <div class="lo_1 lo_2">
+                    <span>手机号</span>
+                    <input type="text"  id="phone" name="phone" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入手机号" onfocus="if(this.value=='请输入手机号'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入手机号'){this.value='请输入手机号';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>验证码</span>
+                    <input type="password"  id="code" name="code" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入验证码" onfocus="if(this.value=='请输入验证码'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入验证码'){this.value='请输入验证码';
+                           this.style.color='#ccc';}">
+                    <div class="yan">
+                        <input type="button" class="btn_mfyzm" value="获取验证码">
+                    </div>
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>真实姓名</span>
+                    <input type="text"  id="name" name="name" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入真实姓名" onfocus="if(this.value=='请输入真实姓名'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入真实姓名'){this.value='请输入真实姓名';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>登录密码</span>
+                    <input type="password"  id="pwd" name="pwd" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入登录密码"onfocus="if(this.value=='请输入登录密码'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入登录密码'){this.value='请输入登录密码';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>确认登录密码</span>
+                    <input type="password"  id="confirm_password" name="confirm_password" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请再一次输入登录密码" onfocus="if(this.value=='请再一次输入登录密码'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请再一次输入登录密码'){this.value='请再一次输入登录密码';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>支付密码</span>
+                    <input type="password"  id="paypwd" name="paypwd" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入支付密码" onfocus="if(this.value=='请输入支付密码'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入支付密码'){this.value='请输入支付密码';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>身份证号</span>
+                    <input type="text"  id="specid" name="specid" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入身份证号" onfocus="if(this.value=='请输入身份证号'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入身份证号'){this.value='请输入身份证号';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>支付宝账号</span>
+                    <input type="text"  id="alipay" name="alipay" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入支付宝账号" onfocus="if(this.value=='请输入支付宝账号'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入支付宝账号'){this.value='请输入支付宝账号';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>联系QQ</span>
+                    <input type="text" id="qq" name="qq" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入联系QQ" onfocus="if(this.value=='请输入联系QQ'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入联系QQ'){this.value='请输入联系QQ';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>银行卡卡号</span>
+                    <input type="text"  id="bank" name="bank" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入银行卡卡号" onfocus="if(this.value=='请输入银行卡卡号'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入银行卡卡号'){this.value='请输入银行卡卡号';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>家庭地址</span>
+                    <input type="text"  id="address" name="address" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入家庭地址" onfocus="if(this.value=='请输入家庭地址'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入家庭地址'){this.value='请输入家庭地址';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>邮箱</span>
+                    <input type="email"  id="cemail" name="cemail" size="60"
+                           maxlength="60" style="color:rgb(204,204,204);"
+                           value="请输入邮箱" onfocus="if(this.value=='请输入邮箱'){this.value=''};
+                           this.style.color='black';"
+                           onblur="if(this.value==''||this.value=='请输入邮箱'){this.value='请输入邮箱';
+                           this.style.color='#ccc';}">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>身份证正面</span>
+                    <input type="file" name="file1" id="file1" style="width:10rem;">
+                </div>
+                <div class="lo_1 lo_2">
+                    <span>身份证反面</span>
+                    <input type="file" name="file2" id="file2"  style="width:10rem;">
+                </div>
+
+                <a href="#" class="lo_login">注册</a>
+
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
